@@ -8,45 +8,45 @@ Los Andes Grupo Inmobiliario con presencia en Mexico y Colombia es una una inmob
 El análisis realizado se llevo a cabo en Power BI en 5 etapas: Calidad de datos, creación de tabla de calendario, modelado de datos, creacion de medidas y KPIs, y estructura de Dashboard.
 
 ## 🔍 Pregunta de Investigación
-¿Es RappiPlus un modelo rentable que retiene a sus clientes?
+¿Cuál es el ingreso total generado por las ventas de propiedades?
+¿Qué tipo de propiedad genera más ingresos?
+¿Qué segmentos de clientes compran más?
+¿Cómo evolucionan las ventas en el tiempo?
+¿El negocio está creciendo año contra año?
+¿Los clientes vuelven a comprar después de su primera compra?
 
 ## 📋 Objetivos
 Realizar una limpieza adecuada de los datos para garantizar la validez de los mismos en los análisis posteriores.
-Identificar KPIs financieros para determinar la rentabilidad del modelo.
-Elaborar un funnel que permita identificar la pérdida de clientes en el proceso de compra.
+Identificar KPIs financieros para determinar la rentabilidad del negocio.
 Dividir a los clientes en cohortes para identificar la retención de los mismos a lo largo del tiempo.
-Evaluar si el cambio en la User Interface (UI) del checkout tuvo impacto en la tasa de conversión.
 Comunicar los hallazgos en un dashboard en Power BI
 
 ## 🗂️ Dataset
-Fuente: rappiplus_orders_raw.csv
+Fuente: hecho_ventas_propiedades.csv
 Tamaño: 25,100 registros de clientes
 
-Fuente: rappiplus_catalog.csv
+Fuente: dim_clientes.csv
 Tamaño: 7 registros
 
-Fuente: rappiplus_marketing_spend.csv
+Fuente: dim_propiedades.csv
 Tamaño: 1,620 registros
-
-Fuente: experiment_checkout_ui.csv
-Tamaño: 10,000 registros
 
 ## **Variables Analizadas**
 | Variable | Tipo | Descripción |
 |---------|-------------|-------------------|
-| monto_total	| Numérica | Monto pagado por el pedido |
-| monto_descuento | Numérica |	Descuento aplicado al pedido |
-| gasto | Numérica	| Monto invertido en la campaña de marketing |
-| nombre_producto	| Categórica	| Nombre del producto |
-| costo_unitario | Numérica | Costo por unidad del producto |
-| canal	| Categórica	| Canal de marketing utilizado |
-| variante | Categórica	| Variante del experimento asignada al usuario (control o tratamiento) |
-| convirtio	| Binaria	| Indicador de conversión (1 = convirtió, 0 = no convirtió) |
+| precio_venta	| Numérica | Precio final de venta de la propiedad |
+| monto_comision | Numérica |	Monto de comisión generado por la venta |
+| ciudad | Categórica	| Ciudad donde se realizó la venta |
+| tipo_propiedad	| Categórica	| Tipo de propiedad vendida |
+| segmento_comprador | Categórica | Tipo o perfil del comprador |
+| canal_venta	| Categórica	| Canal utilizado para la venta |
+| tipo_propiedad | Categórica	| Tipo de propiedad |
+| fecha_venta	| Fecha	| Fecha en que se realizó la venta |
 
 ## 🛠️ Metodología
 Limpieza de datos.
-Prueba Z para proporciones.
-Herramientas Utilizadas: pandas, SQL, statsmodel.stats.proportion, Power BI
+Modelado de datos.
+Herramientas Utilizadas: *Power BI, Visualizaciones nativas (barras, líneas, tablas, KPI), Modelado de datos en esquema estrella, Cálculos analíticos (medidas y columnas calculadas).*
 
 ## 🔄 Etapas del Análisis
 Este proyecto sigue un flujo estructurado de análisis dividido en 6 etapas principales:
