@@ -1,9 +1,9 @@
-# 📊 Análisis Comercial Inmobiliario Grupo Andes
+# 📊 **Análisis Comercial Andes Capital Real State**
 
 ## 🇪🇦 Español
 
 ## 🎯 Descripción del Proyecto
-Los Andes Grupo Inmobiliario con presencia en Mexico y Colombia es una una inmobiliaria con más de 30 años de experiencia en la urbanización y venta de fraccionamientos campestres, necesita evaluar su **desempeño comercial** para comprender su crecimiento, rentabilidad y comportamiento de clientes. 
+Andes Capital Real State con presencia en Mexico y Colombia es una una inmobiliaria con más de 30 años de experiencia en la urbanización y venta de fraccionamientos campestres, necesita evaluar su **desempeño comercial** para comprender su crecimiento, rentabilidad y comportamiento de clientes. 
 
 El análisis realizado se llevo a cabo en Power BI en 5 etapas: Calidad de datos, creación de tabla de calendario, modelado de datos, creacion de medidas y KPIs, y estructura de Dashboard.
 
@@ -23,13 +23,13 @@ Comunicar los hallazgos en un dashboard en Power BI
 
 ## 🗂️ Dataset
 Fuente: hecho_ventas_propiedades.csv
-Tamaño: 25,100 registros de clientes
+Tamaño: 8,500 registros de ventas
 
 Fuente: dim_clientes.csv
-Tamaño: 7 registros
+Tamaño: 3,500 registros de clientes
 
 Fuente: dim_propiedades.csv
-Tamaño: 1,620 registros
+Tamaño: 8,000 registros de propiedades
 
 ## **Variables Analizadas**
 | Variable | Tipo | Descripción |
@@ -49,54 +49,53 @@ Modelado de datos.
 Herramientas Utilizadas: *Power BI, Visualizaciones nativas (barras, líneas, tablas, KPI), Modelado de datos en esquema estrella, Cálculos analíticos (medidas y columnas calculadas).*
 
 ## 🔄 Etapas del Análisis
-Este proyecto sigue un flujo estructurado de análisis dividido en 6 etapas principales:
+Este proyecto sigue un flujo estructurado de análisis dividido en 5 etapas principales:
 
 | Etapa	 | Descripción | Resultado Esperado |
 |---------|-------------|-------------------|
-| 1. Exploración Inicial | Cargar y explorar el dataset | Entender estructura, columnas, tipos y métricas clave |
-| 2. Preparación de Datos	| Preparar datos y documentar supuestos |	Datos limpios y listos para análisis. Variables relevantes definidas y reglas documentadas |
-| 3. Funnel de conversión | Se creó el camino de compra del usuario | Se identificó en qué parte se pierden clientes | 
-| 4. Retención por cohortes | Análisis semanal de actividad después del registro | Observar cuántos clientes siguen comprando a lo largo del tiempo |
-| 5. Test A/B de UI checkout| Calcular Prueba Z para proporciones | Rechazar o aceptar hipótesis nula |
-| 6. Visualización | Crear visualizaciones de KPIs |	Dashboard interactivo en Power BI |
+| 1. Exploración y limpieza | Cargar y explorar el dataset | Entender estructura, columnas, tipos, métricas clave, corregir formatos, valores nulos y eliminar duplicados |
+| 2. Creación de tabla de calendario | Se creó el la tabla dim_fecha | Calcular KPIs y cohortes de retención | 
+| 3. Modelado de datos | Crear el modelo estrella, y definir las relaciones adecuadas entre tablas | Tener un modelo que pueda calcular medidas DAX y KPIs sin presentar errores de ejecución o de cálculo |
+| 4. Creacion de medidas y cohortes | Calcular medidas qué contesten las preguntas de negocio | Entender el desempeño del negocio y el comportamiento del cliente a lo largo del tiempo |
+| 5. Visualización | Crear visualizaciones |	Dashboard interactivo en Power BI |
  
 ### 🎯 Enfoque del Análisis
-Naturaleza: Descriptivo (KPIs de negocio), Exploratorio (funnel, cohortes), e Inferencial (test A/B)
-Variable objetivo: Revenue y profit, Tasa de conversión, y Tasa de retención semanal
-Tipos de relaciones analizadas: Comportamiento del usuario en el funnel, Actividad semanal por cohorte de registro, e Impacto de cambios en UI (A/B test)
+Naturaleza: Descriptivo (KPIs de negocio) y Exploratorio (cohortes)
+Variable objetivo: Revenue y profit, y Tasa de retención mensual
+Tipos de relaciones analizadas: Comportamiento del usuario por tipo de cliente, ingresos por tipo de propiedad, Actividad anual y mensual por cohorte de registro.
 
 ### 🗂 Producto Final
 Un reporte de rentabilidad y retención que combina:
 
 ✅ Evidencia visual (Dashboard interactivo en PowerBI)
 ✅ Evidencia numérica (KPIs de performance)
-✅ Análisis de funnel de conversión
 ✅ Retención por cohortes
-✅ Validación de hipótesis (Test A/B)
 ✅ Implicaciones de negocio accionables
 
 ### **📊 Resultado del Análisis**
-- La categoría de productos que más aporta a rentabilidad es electrónica.
-- No hay una fricción aparente en el funnel de conversión.
-- Se detectó un error en el registro del funnel, especificamente en el paso seleccionar item, el cual presenta menos usuarios que el siguiente paso (añadir al carrito de compra).
-- La retención de clientes a lo largo de las semanas variaba entre un 40% - 44%.
-- No hubo diferencia estadísticanente significativa en la conversión entre la página A y la página B
+- El tipo de propiedad que genera mayor revenue son las casas con $2.24 mil millones (37.3% del total).
+- La ciudad con mayor volumen de ventas es Ciudad de México con 53.92% de participación.
+- El canal de venta más eficiente en términos de ingresos son los corredores con 72.85% de participación.
+- El negocio registró un crecimiento del 14.28% en 2024 vs 2023.
+- Las ventas muestran patrones estacionales con picos en marzo-abril y septiembre-noviembre.
+- Las ventas muestran un crecimiento sostenido del 14.28% YoY.
+- Los corredores generan 2.7 veces más ingresos que las ventas directas.
 
 ## **🖋 Conclusiones y recomendaciones**
-- Realizar las modificaciones pertinentes a la página web para capturar correctamente la cantidad de usuarios en cada paso del funnel de compra.
-- Antes de escalar la versión B, proyectar el impacto financiero anual para determinar si la mejora justifica el cambio.
-- Diseñar una nueva iteración del experimento con modificaciones más diferenciadas que puedan generar un incremento más relevante en ingresos.
-- Priorizar el análisis de rentabilidad por canal de tráfico (costo vs ingreso generado) antes de considerar redistribuciones presupuestales.
-- Explorar optimizaciones dentro de cada canal en lugar de modificar la estrategia global de adquisición.
-- Calcular CAC y LTV a 30 días que permita vislumbrar el costo beneficio de cualquier cambio.
+- Priorizar la comercialización de propiedades tipo comercial por su alto ticket promedio ($1.79M).
+- Fortalecer el canal de corredores que presenta mayor participación en el revenue (72.85%).
+- Implementar estrategias de upselling para clientes primerizos hacia propiedades de mayor valor.
+- Desarrollar campañas estacionales aprovechando los picos de marzo-abril y septiembre-noviembre.
+- Crear programas de fidelización para el segmento de inversionistas (24.47%) con potencial de recompra.
+- Optimizar la eficiencia de costos en el canal de corredores manteniendo su efectividad comercial.
 
 ## ▶ Cómo abrir el notebook en Google Colab
 
 Haz clic en el siguiente botón:
-[Google Colab](https://colab.research.google.com/drive/1d5hEBvqIXTaKGqIwQrEE1zKKEPFnitgY?usp=sharing)
+[Google Colab](https://colab.research.google.com/drive/1AeliHUxdl8CC2TGrKDZelCq_pRMMwOKm?usp=sharing)
 
 ## 📘 Cómo reproducir el análisis
 
-1. Abre `notebooks/Estudiante_Proyecto_Final.ipynb`
+1. Abre `notebooks/S11 Proyecto_InmobiliarioGrupoAndes.ipynb`
 2. Ejecuta las celdas en orden
 3. El notebook carga automáticamente el dataset desde `/data/`
